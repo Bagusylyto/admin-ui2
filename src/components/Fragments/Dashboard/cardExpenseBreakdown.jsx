@@ -1,4 +1,4 @@
-import expensesBreakdowns from "../../../data/expense";
+import expensesBreakdowns from "../../../data/expenses";
 import Card from "../../Elements/Card";
 import { Icon } from "../../Elements/Icon";
 

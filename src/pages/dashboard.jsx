@@ -2,7 +2,7 @@ import MainLayout from "../components/Layouts/MainLayout";
 import CardBill from "../components/Fragments/Dashboard/CardBill";
 import CardExpenseBreakdown from "../components/Fragments/Dashboard/CardExpenseBreakdown";
 import CardTransaction from "../components/Fragments/Dashboard/CardTransaction";
-import CardBalance from "../components/Fragments/Dashboard/cardBalance";
+import CardBalance from "../components/Fragments/Dashboard/CardBalance";
 import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
 import CardGoal from "../components/Fragments/Dashboard/CardGoal";
 

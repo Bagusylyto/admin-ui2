@@ -1,5 +1,6 @@
-import React from "react";
+import { useContext } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
+import { ThemeContext } from "../../../context/themeContext";
 
 export const dataset = [
   {
@@ -111,6 +112,10 @@ const chartSetting = {
 
 export default function BarsDataset(props) {
   const { desc } = props;
+
+  const { theme } = useContext(ThemeContext);
+
+  desc.series[1].color = theme.color;
 
   return (
     <BarChart

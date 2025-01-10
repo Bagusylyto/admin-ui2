@@ -16,9 +16,9 @@ const CardExpenseBreakdown = () => {
           </div>
         </div>
       </div>
-      {/* <div className="flex place-content-center flex-col me-8">
+      <div className="flex place-content-center flex-col me-8">
         <Icon.ArrowRight />
-      </div> */}
+      </div>
     </div>
   ));
 

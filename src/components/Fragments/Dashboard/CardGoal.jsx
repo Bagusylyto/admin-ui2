@@ -8,7 +8,7 @@ import Axios from "axios";
 const CardGoal = () => {
   const [goals, setGoals] = useState({ presentAmount: 0, targetAmount: 0 });
 
-  const value = (goals.presentAmount * 100) / goals.targetAmount;
+  const chartsValue = (goals.presentAmount * 100) / goals.targetAmount;
 
   const getData = async () => {
     try {
@@ -88,7 +88,7 @@ const CardGoal = () => {
               </div>
             </div>
             <div className="ms-4 text-center">
-              <CompositionExample desc={value} />
+              <CompositionExample desc={chartsValue} />
               <div className="flex justify-between">
                 <span className="text-gray-03">$0</span>
                 <span className="font-bold text-2xl">12K</span>

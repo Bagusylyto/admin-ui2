@@ -31,7 +31,9 @@ const CardBalance = () => {
 
           <div className="flex">
             <span className="text-xl font-bold">${account.balance}</span>
-            <div className="bg-white max-w-min rounded-full ps-1 pt-1 ms-4">{/* <Icon.ArrowUpRight /> */}</div>
+            <div className="bg-white max-w-min rounded-full ps-1 pt-1 ms-4">
+              <Icon.ArrowUpRight />
+            </div>
           </div>
         </div>
       </div>

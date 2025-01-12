@@ -5,13 +5,14 @@ import { NotifContext } from "../../context/notifContext";
 import SimpleBackdrop from "../Elements/Backdrop";
 import CustomizedSnackbars from "../Elements/SnackBar";
 import * as motion from "motion/react-client";
+import DarkMode from "../Elements/DarkMode";
 
 const AuthLayout = (props) => {
   const { children, type } = props;
   const { msg, setMsg, open, setOpen, isLoading, setIsLoading } = useContext(NotifContext);
 
   return (
-    <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+    <div className="flex justify-center min-h-screen items-center bg-special-mainBg dark:bg-gray-900">
       {isLoading && <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />}
       {msg && <CustomizedSnackbars severity={msg.severity} message={msg.desc} open={open} setOpen={setOpen} />}
       {/* container start */}
@@ -31,11 +32,11 @@ const AuthLayout = (props) => {
         {/* logo end */}
         {/* teks start */}
         <div className="text-center flex justify-center items-center flex-col">
-          {type == "sign up" && <div className="font-bold text-xl">Create an account</div>}
+          {type == "sign up" && <div className="font-bold text-xl dark:text-white">Create an account</div>}
           {type == "forgot" && (
             <>
-              <div className="font-bold text-xl">Forgot Password?</div>
-              <div className="text-gray-03 text-sm mt-2">
+              <div className="font-bold text-xl dark:text-white">Forgot Password?</div>
+              <div className="text-gray-03 text-sm mt-2 dark:text-gray-400">
                 Enter your email address to get the
                 <br />
                 password reset link
@@ -50,14 +51,14 @@ const AuthLayout = (props) => {
         {type != "forgot" && (
           <>
             {/* teks start */}
-            <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
-              <div className="border border-gray-05 w-full"></div>
-              <div className="px-2 bg-special-mainBg absolute"> or {type} with</div>
+            <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static dark:text-gray-400">
+              <div className="border border-gray-05 w-full dark:border-gray-600"></div>
+              <div className="px-2 bg-special-mainBg dark:bg-gray-800 absolute"> or {type} with</div>
             </div>
             {/* teks end */}
             {/* sign in with google start */}
             <div className="mb-8">
-              <button className="h-12 flex items-center justify-center rounded-md text-sm w-full bg-gray-05 text-gray-01" type="button">
+              <button className="h-12 flex items-center justify-center rounded-md text-sm w-full bg-gray-05 text-gray-01 dark:bg-gray-700 dark:text-gray-200" type="button">
                 <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="-0.5 0 48 48" version="1.1">
                   {" "}
                   <title>Google-color</title> <desc>Created with Sketch.</desc> <defs> </defs>{" "}
@@ -110,8 +111,8 @@ const AuthLayout = (props) => {
         <div className="flex justify-center">
           {type == "sign up" && (
             <>
-              <span className="text-sm text-gray-03">Already have an account?&nbsp;</span>
-              <Link to="/login" className="text-primary text-sm font-bold">
+              <span className="text-sm text-gray-03 dark:text-gray-400">Already have an account?&nbsp;</span>
+              <Link to="/login" className="text-primary text-sm font-bold dark:text-blue-400">
                 Sign In Here
               </Link>
             </>
@@ -119,11 +120,11 @@ const AuthLayout = (props) => {
 
           {type == "sign in" && (
             <div className="text-center">
-              <Link to="/register" className="text-primary text-sm font-bold">
+              <Link to="/register" className="text-primary text-sm font-bold dark:text-blue-400">
                 Create an account
               </Link>
               <br />
-              <Link to="/forgot-password" className="text-gray-03 text-sm font-bold">
+              <Link to="/forgot-password" className="text-gray-03 text-sm font-bold dark:text-gray-400">
                 Forgot Password
               </Link>
             </div>
@@ -131,11 +132,14 @@ const AuthLayout = (props) => {
 
           {type == "forgot" && (
             <div className="text-center mt-4">
-              <Link to="/login" className="text-gray-03 text-sm font-bold">
+              <Link to="/login" className="text-gray-03 text-sm font-bold dark:text-gray-400">
                 Back to Login
               </Link>
             </div>
           )}
+        </div>
+        <div className="flex justify-center w-full mt-3">
+          <DarkMode />
         </div>
         {/* link end */}
       </motion.div>

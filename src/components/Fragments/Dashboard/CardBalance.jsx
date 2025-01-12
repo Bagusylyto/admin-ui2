@@ -12,7 +12,7 @@ const CardBalance = () => {
   const balanceCard = accounts.map((account) => (
     <div key={account.id} className={`p-2 ${theme.name}`}>
       <div className="flex justify-between">
-        <div className="text-2xl font-bold">${account.balance}</div>
+        <div className="text-2xl font-bold dark:text-gray-600">${account.balance}</div>
         <div>
           <Link to="/balance">All account</Link>
         </div>
@@ -22,7 +22,7 @@ const CardBalance = () => {
         <div>
           Account Type
           <br />
-          <span className="text-xl font-bold">{account.accountType}</span>
+          <span className="text-xl font-bold dark:text-gray-600">{account.accountType}</span>
           <br />
           {account.accountNumber}
         </div>
@@ -30,7 +30,7 @@ const CardBalance = () => {
           {account.logo != "" && <img className="ms-auto" src={`/images/${account.logo}`} />}
 
           <div className="flex">
-            <span className="text-xl font-bold">${account.balance}</span>
+            <span className="text-xl font-bold dark:text-gray-600">${account.balance}</span>
             <div className="bg-white max-w-min rounded-full ps-1 pt-1 ms-4">
               <Icon.ArrowUpRight />
             </div>
